@@ -259,9 +259,9 @@ const JSIcon = () => (
 
 export function Hero() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 px-4 sm:px-6 lg:px-8 pt-24 sm:pt-20 md:pt-0 transition-colors duration-300">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 px-4 sm:px-6 lg:px-8 pt-20 sm:pt-0 transition-colors duration-300">
       <div className="max-w-7xl w-full">
-        <div className="grid md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center">
+        <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -284,7 +284,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="text-gray-900 dark:text-white mb-4 sm:mb-6 leading-tight"
+              className="text-gray-900 dark:text-white mb-4 sm:mb-6"
             >
               Hi, I'm Ahmed Shahriyar
               <br />
@@ -348,130 +348,133 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative order-1 md:order-2"
           >
-            <div className="relative w-full aspect-square max-w-xs sm:max-w-md md:max-w-lg mx-auto">
-              {/* Decorative elements */}
+            <div className="relative w-full aspect-square max-w-md md:max-w-lg mx-auto">
+              {/* Animated gradient backdrop */}
               <motion.div
                 animate={{
                   rotate: 360,
+                  scale: [1, 1.1, 1],
                 }}
                 transition={{
-                  duration: 20,
-                  repeat: Infinity,
-                  ease: "linear",
+                  rotate: { duration: 25, repeat: Infinity, ease: "linear" },
+                  scale: { duration: 5, repeat: Infinity, ease: "easeInOut" },
                 }}
-                className="absolute inset-0 rounded-full border-2 border-dashed border-purple-300"
+                className="absolute -inset-4 bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 dark:from-purple-600 dark:via-pink-600 dark:to-blue-600 opacity-15 blur-[80px] rounded-[4rem]"
               />
 
+              {/* Outer container with gradient - Rectangle */}
+              <div
+                className="absolute inset-0 rounded-[3.5rem]"
+                style={{
+                  background: "linear-gradient(135deg, rgba(168,85,247,0.15) 0%, rgba(236,72,153,0.15) 50%, rgba(59,130,246,0.15) 100%)",
+                  boxShadow: "0 0 50px rgba(168,85,247,0.25)",
+                }}
+              />
+
+              {/* Inner decorative corners */}
               <motion.div
-                animate={{
-                  rotate: -360,
-                }}
-                transition={{
-                  duration: 15,
-                  repeat: Infinity,
-                  ease: "linear",
-                }}
-                className="absolute inset-8 rounded-full border-2 border-dashed border-blue-300"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.6, duration: 0.6 }}
+                className="absolute inset-8 border-[2px] border-dashed border-purple-300/50 dark:border-purple-400/40 rounded-2xl"
               />
 
-              {/* Profile placeholder */}
-              <div className="absolute inset-16 rounded-full overflow-hidden shadow-2xl">
+              {/* Profile image container - Rectangle */}
+              <motion.div
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ 
+                  scale: 1, 
+                  opacity: 1,
+                }}
+                transition={{ 
+                  delay: 0.5, 
+                  duration: 0.6,
+                }}
+                className="absolute inset-16 overflow-hidden shadow-2xl ring-8 ring-white/50 dark:ring-gray-800/50 rounded-2xl"
+                style={{
+                  boxShadow: "0 25px 70px rgba(0,0,0,0.25), 0 0 50px rgba(168,85,247,0.25)",
+                }}
+              >
                 <ImageWithFallback
                   src={profileImage}
                   alt="Ahmed Shahriyar - UI/UX Designer"
                   className="w-full h-full object-cover"
                 />
-              </div>
-
-              {/* Floating skill badges - hidden on mobile, visible on md+ */}
-              <motion.div
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 2, repeat: Infinity }}
-                className="hidden md:flex absolute -top-4 right-12 w-12 h-12 md:w-16 md:h-16 items-center justify-center bg-white rounded-full shadow-lg"
-              >
-                <FigmaIcon />
               </motion.div>
 
+              {/* Skill badges positioned decoratively around the profile */}
+              {/* Framer - Top Right */}
               <motion.div
-                animate={{ y: [0, -10, 0] }}
-                transition={{
-                  duration: 2,
-                  delay: 0.3,
-                  repeat: Infinity,
+                initial={{ opacity: 0, x: -20, y: 20 }}
+                animate={{ 
+                  opacity: 1, 
+                  x: 0, 
+                  y: 0,
                 }}
-                className="hidden md:flex absolute top-1/3 -left-4 w-12 h-12 md:w-16 md:h-16 items-center justify-center bg-white rounded-full shadow-lg"
-              >
-                <AdobeXDIcon />
-              </motion.div>
-
-              <motion.div
-                animate={{ y: [0, -10, 0] }}
-                transition={{
-                  duration: 2,
-                  delay: 0.6,
-                  repeat: Infinity,
+                transition={{ delay: 0.8, duration: 0.6, scale: { duration: 0.2 }, rotate: { duration: 0.2 } }}
+                whileHover={{ scale: 1.25, rotate: 5 }}
+                whileTap={{ scale: 0.95 }}
+                className="absolute -top-6 -right-6 w-20 h-20 flex items-center justify-center bg-gradient-to-br from-white to-blue-50 dark:from-gray-800 dark:to-blue-900/30 rounded-3xl shadow-2xl ring-4 ring-blue-100 dark:ring-blue-700/50 backdrop-blur-sm cursor-pointer"
+                style={{
+                  boxShadow: "0 15px 40px rgba(59,130,246,0.4), 0 0 0 1px rgba(255,255,255,0.1)",
                 }}
-                className="hidden md:flex absolute -bottom-4 left-12 w-12 h-12 md:w-16 md:h-16 items-center justify-center bg-white rounded-full shadow-lg"
               >
                 <FramerIcon />
               </motion.div>
 
+              {/* Figma - Top Left */}
               <motion.div
-                animate={{ y: [0, -10, 0] }}
-                transition={{
-                  duration: 2,
-                  delay: 0.9,
-                  repeat: Infinity,
+                initial={{ opacity: 0, x: 20, y: 20 }}
+                animate={{ 
+                  opacity: 1, 
+                  x: 0, 
+                  y: 0,
                 }}
-                className="hidden md:flex absolute top-1/3 -right-4 w-12 h-12 md:w-16 md:h-16 items-center justify-center bg-white rounded-full shadow-lg"
+                transition={{ delay: 0.9, duration: 0.6, scale: { duration: 0.2 }, rotate: { duration: 0.2 } }}
+                whileHover={{ scale: 1.25, rotate: -5 }}
+                whileTap={{ scale: 0.95 }}
+                className="absolute -top-6 -left-6 w-20 h-20 flex items-center justify-center bg-gradient-to-br from-white to-purple-50 dark:from-gray-800 dark:to-purple-900/30 rounded-3xl shadow-2xl ring-4 ring-purple-100 dark:ring-purple-700/50 backdrop-blur-sm cursor-pointer"
+                style={{
+                  boxShadow: "0 15px 40px rgba(168,85,247,0.4), 0 0 0 1px rgba(255,255,255,0.1)",
+                }}
               >
-                <IllustratorIcon />
+                <FigmaIcon />
               </motion.div>
 
+              {/* HTML - Bottom Right */}
               <motion.div
-                animate={{ y: [0, -10, 0] }}
-                transition={{
-                  duration: 2,
-                  delay: 1.2,
-                  repeat: Infinity,
+                initial={{ opacity: 0, x: -20, y: -20 }}
+                animate={{ 
+                  opacity: 1, 
+                  x: 0, 
+                  y: 0,
                 }}
-                className="hidden md:flex absolute bottom-1/3 -right-4 w-12 h-12 md:w-16 md:h-16 items-center justify-center bg-white rounded-full shadow-lg"
-              >
-                <PhotoshopIcon />
-              </motion.div>
-
-              <motion.div
-                animate={{ y: [0, -10, 0] }}
-                transition={{
-                  duration: 2,
-                  delay: 1.5,
-                  repeat: Infinity,
+                transition={{ delay: 1.2, duration: 0.6, scale: { duration: 0.2 }, rotate: { duration: 0.2 } }}
+                whileHover={{ scale: 1.25, rotate: 5 }}
+                whileTap={{ scale: 0.95 }}
+                className="absolute -bottom-6 -right-6 w-20 h-20 flex items-center justify-center bg-gradient-to-br from-white to-orange-50 dark:from-gray-800 dark:to-orange-900/30 rounded-3xl shadow-2xl ring-4 ring-orange-100 dark:ring-orange-700/50 backdrop-blur-sm cursor-pointer"
+                style={{
+                  boxShadow: "0 15px 40px rgba(249,115,22,0.4), 0 0 0 1px rgba(255,255,255,0.1)",
                 }}
-                className="hidden md:flex absolute -top-4 left-12 w-12 h-12 md:w-16 md:h-16 items-center justify-center bg-white rounded-full shadow-lg"
               >
                 <HTMLIcon />
               </motion.div>
 
+              {/* JavaScript - Bottom Left */}
               <motion.div
-                animate={{ y: [0, -10, 0] }}
-                transition={{
-                  duration: 2,
-                  delay: 1.8,
-                  repeat: Infinity,
+                initial={{ opacity: 0, x: 20, y: -20 }}
+                animate={{ 
+                  opacity: 1, 
+                  x: 0, 
+                  y: 0,
                 }}
-                className="hidden md:flex absolute bottom-1/3 -left-4 w-12 h-12 md:w-16 md:h-16 items-center justify-center bg-white rounded-full shadow-lg"
-              >
-                <CSSIcon />
-              </motion.div>
-
-              <motion.div
-                animate={{ y: [0, -10, 0] }}
-                transition={{
-                  duration: 2,
-                  delay: 2.1,
-                  repeat: Infinity,
+                transition={{ delay: 1.1, duration: 0.6, scale: { duration: 0.2 }, rotate: { duration: 0.2 } }}
+                whileHover={{ scale: 1.25, rotate: 5 }}
+                whileTap={{ scale: 0.95 }}
+                className="absolute -bottom-6 -left-6 w-20 h-20 flex items-center justify-center bg-gradient-to-br from-white to-yellow-50 dark:from-gray-800 dark:to-yellow-900/30 rounded-3xl shadow-2xl ring-4 ring-yellow-100 dark:ring-yellow-700/50 backdrop-blur-sm cursor-pointer"
+                style={{
+                  boxShadow: "0 15px 40px rgba(234,179,8,0.4), 0 0 0 1px rgba(255,255,255,0.1)",
                 }}
-                className="hidden md:flex absolute -bottom-4 right-12 w-12 h-12 md:w-16 md:h-16 items-center justify-center bg-white rounded-full shadow-lg"
               >
                 <JSIcon />
               </motion.div>
