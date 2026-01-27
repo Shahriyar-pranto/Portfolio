@@ -42,9 +42,9 @@ export default function Home() {
         </section>
       </main>
       
-      <footer className="bg-gray-900 dark:bg-gray-950 text-white py-8">
+      <footer className="bg-gray-900 dark:bg-gray-950 text-white py-6 sm:py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-gray-400">© {new Date().getFullYear()} Ahmed Shahriyar. All rights reserved.</p>
+          <p className="text-sm sm:text-base text-gray-400">© {new Date().getFullYear()} Ahmed Shahriyar. All rights reserved.</p>
         </div>
       </footer>
     </div>

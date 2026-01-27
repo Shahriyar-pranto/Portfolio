@@ -50,17 +50,17 @@ export function Experience() {
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   return (
-    <div ref={ref} className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-900 transition-colors duration-300">
+    <div ref={ref} className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-900 transition-colors duration-300">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-12 md:mb-16"
         >
-          <h2 className="text-gray-900 dark:text-white mb-4">Work Experience</h2>
-          <div className="w-20 h-1 bg-purple-600 dark:bg-purple-500 mx-auto mb-6"></div>
-          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Work Experience</h2>
+          <div className="w-40 h-1 bg-purple-600 dark:bg-purple-500 mx-auto mb-4 sm:mb-6"></div>
+          <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
             My professional journey in UI/UX design across various industries
           </p>
         </motion.div>
@@ -69,14 +69,14 @@ export function Experience() {
           {/* Timeline line */}
           <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-gray-200 dark:bg-gray-700"></div>
 
-          <div className="space-y-8 md:space-y-12">
+          <div className="space-y-6 sm:space-y-8 md:space-y-12">
             {experiences.map((exp, index) => (
               <motion.div
                 key={exp.id}
                 initial={{ opacity: 0, y: 50 }}
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
-                className={`relative grid md:grid-cols-2 gap-6 md:gap-8 items-center ${
+                className={`relative grid md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 items-start md:items-center ${
                   index % 2 === 0 ? '' : 'md:flex-row-reverse'
                 }`}
               >
@@ -92,13 +92,13 @@ export function Experience() {
                       </span>
                     )}
                     
-                    <h3 className={`text-gray-900 dark:text-white mb-2 text-lg sm:text-xl ${index % 2 === 0 ? 'md:text-right' : ''}`}>
+                    <h3 className={`text-gray-900 dark:text-white mb-2 text-lg sm:text-xl md:text-xl ${index % 2 === 0 ? 'md:text-right' : ''}`}>
                       {exp.title}
                     </h3>
                     
                     <div className={`flex items-center gap-2 text-purple-600 dark:text-purple-400 mb-2 text-sm sm:text-base ${index % 2 === 0 ? 'md:justify-end' : ''}`}>
                       <Briefcase size={18} className="flex-shrink-0" />
-                      <span>{exp.company}</span>
+                      <span className="break-words">{exp.company}</span>
                     </div>
                     
                     <div className={`flex items-center gap-2 text-gray-500 dark:text-gray-400 mb-4 text-xs sm:text-sm ${index % 2 === 0 ? 'md:justify-end' : ''}`}>
@@ -106,7 +106,7 @@ export function Experience() {
                       <span>{exp.period}</span>
                     </div>
                     
-                    <ul className={`space-y-2 ${index % 2 === 0 ? 'md:text-right' : ''}`}>
+                    <ul className={`space-y-2 text-left ${index % 2 === 0 ? 'md:text-right' : ''}`}>
                       {exp.responsibilities.map((resp, idx) => (
                         <li key={idx} className={`text-gray-600 dark:text-gray-400 text-sm sm:text-base flex items-start gap-2 ${index % 2 === 0 ? 'md:flex-row-reverse md:justify-end' : ''}`}>
                           <span className="text-purple-600 dark:text-purple-400 mt-1 flex-shrink-0">•</span>
@@ -118,12 +118,12 @@ export function Experience() {
                 </div>
 
                 {/* Timeline dot */}
-                <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2">
+                <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 top-1/2">
                   <motion.div
                     initial={{ scale: 0 }}
                     animate={isInView ? { scale: 1 } : { scale: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.2 + 0.3 }}
-                    className="w-4 h-4 bg-purple-600 dark:bg-purple-500 rounded-full border-4 border-white dark:border-gray-900 shadow-lg"
+                    className="w-4 h-4 bg-purple-600 dark:bg-purple-500 rounded-full border-4 border-white dark:border-gray-900 shadow-lg z-10"
                   />
                 </div>
 
@@ -139,32 +139,32 @@ export function Experience() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6, delay: 0.8 }}
-          className="mt-20"
+          className="mt-12 sm:mt-16 md:mt-20"
         >
-          <h3 className="text-gray-900 dark:text-white text-center mb-8">Education & Certifications</h3>
+          <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white text-center mb-6 sm:mb-8">Education & Certifications</h3>
           
-          <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
             <div className="bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-900/20 dark:to-blue-900/20 rounded-2xl p-5 sm:p-6 border border-purple-100 dark:border-purple-800">
               <div className="mb-3">
                 <span className="inline-block px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-300 rounded-full mb-3">
                   In Progress
                 </span>
               </div>
-              <h4 className="text-gray-900 dark:text-white mb-2">Master's in ICT</h4>
-              <p className="text-gray-700 dark:text-gray-300 mb-1">Bangladesh University of Professionals</p>
-              <p className="text-gray-500 dark:text-gray-400">Expected 2025</p>
+              <h4 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-2">Master's in ICT</h4>
+              <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300 mb-1">Bangladesh University of Professionals</p>
+              <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">Expected 2025</p>
             </div>
 
             <div className="bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-5 sm:p-6 border border-gray-200 dark:border-gray-600">
-              <h4 className="text-gray-900 dark:text-white mb-2">Bachelor in CSE</h4>
-              <p className="text-gray-700 dark:text-gray-300 mb-1">Daffodil International University</p>
-              <p className="text-gray-500 dark:text-gray-400">Graduated 2020</p>
+              <h4 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-2">Bachelor in CSE</h4>
+              <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300 mb-1">Daffodil International University</p>
+              <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">Graduated 2020</p>
             </div>
 
             <div className="bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 rounded-2xl p-5 sm:p-6 border border-green-100 dark:border-green-800">
-              <h4 className="text-gray-900 dark:text-white mb-2 text-sm sm:text-base">Foundation of User Experience & Design Thinking</h4>
-              <p className="text-gray-700 dark:text-gray-300 mb-1 text-sm">Microsoft Learn</p>
-              <p className="text-gray-500 dark:text-gray-400 text-xs sm:text-sm">2024</p>
+              <h4 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-2">Foundation of User Experience & Design Thinking</h4>
+              <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300 mb-1">Microsoft Learn</p>
+              <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">2024</p>
               <a 
                 href="https://learn.microsoft.com/api/achievements/share/en-us/AhmedShahriyarParvezPranto-0893/4LUWZW9K?sharingId=EC7EF7CE16A7A876"
                 target="_blank"
@@ -179,9 +179,9 @@ export function Experience() {
             </div>
 
             <div className="bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 rounded-2xl p-5 sm:p-6 border border-blue-100 dark:border-blue-800">
-              <h4 className="text-gray-900 dark:text-white mb-2 text-sm sm:text-base">Enterprise Design Thinking Practitioner</h4>
-              <p className="text-gray-700 dark:text-gray-300 mb-1 text-sm">IBM</p>
-              <p className="text-gray-500 dark:text-gray-400 text-xs sm:text-sm">2023</p>
+              <h4 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-2">Enterprise Design Thinking Practitioner</h4>
+              <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300 mb-1">IBM</p>
+              <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">2023</p>
               <a 
                 href="https://www.credly.com/badges/f4e6252e-8af0-40ac-9f2b-beabb7a00474/public_url"
                 target="_blank"
@@ -196,9 +196,9 @@ export function Experience() {
             </div>
 
             <div className="bg-gradient-to-br from-orange-50 to-red-50 dark:from-orange-900/20 dark:to-red-900/20 rounded-2xl p-5 sm:p-6 border border-orange-100 dark:border-orange-800">
-              <h4 className="text-gray-900 dark:text-white mb-2">UI/UX Design</h4>
-              <p className="text-gray-700 dark:text-gray-300 mb-1 text-sm">Creative IT Institute, Dhaka</p>
-              <p className="text-gray-500 dark:text-gray-400 text-xs sm:text-sm">2022</p>
+              <h4 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-2">UI/UX Design</h4>
+              <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300 mb-1">Creative IT Institute, Dhaka</p>
+              <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">2022</p>
               <a 
                 href="https://drive.google.com/file/d/1mjmbl--33jtR9T69TEuJsTBbRJN8BBQc/view?usp=drivesdk"
                 target="_blank"

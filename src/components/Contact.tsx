@@ -80,7 +80,7 @@ export function Contact() {
   return (
     <div
       ref={ref}
-      className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-800 transition-colors duration-300"
+      className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-800 transition-colors duration-300"
     >
       <div className="max-w-7xl mx-auto">
         <motion.div
@@ -91,19 +91,19 @@ export function Contact() {
               : { opacity: 0, y: 20 }
           }
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-12 md:mb-16"
         >
-          <h2 className="text-gray-900 dark:text-white mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
             Get In Touch
           </h2>
-          <div className="w-20 h-1 bg-purple-600 dark:bg-purple-500 mx-auto mb-6"></div>
-          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          <div className="w-40 h-1 bg-purple-600 dark:bg-purple-500 mx-auto mb-4 sm:mb-6"></div>
+          <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
             Have a project in mind? Let's work together to bring
             your ideas to life
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
+        <div className="grid md:grid-cols-2 gap-6 md:gap-8 lg:gap-12">
           {/* Contact Info */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -114,23 +114,23 @@ export function Contact() {
             }
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <h3 className="text-gray-900 dark:text-white mb-6">
+            <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white mb-4 sm:mb-6">
               Get in Touch
             </h3>
-            <p className="text-gray-600 dark:text-gray-400 mb-8">
+            <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-6 sm:mb-8 leading-relaxed">
               I'm always open to discussing new projects,
               creative ideas, or opportunities to be part of
               your visions. Feel free to reach out through the
               form or connect with me on social media.
             </p>
 
-            <div className="space-y-4 mb-8">
-              <div className="flex items-center gap-3 text-gray-700 dark:text-gray-300">
-                <Mail className="w-5 h-5 text-purple-600" />
-                <span>shahriyarpranto@gmail.com</span>
+            <div className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
+              <div className="flex items-center gap-2 sm:gap-3 text-sm sm:text-base text-gray-700 dark:text-gray-300">
+                <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-purple-600 flex-shrink-0" />
+                <span className="break-words">shahriyarpranto@gmail.com</span>
               </div>
-              <div className="flex items-center gap-3 text-gray-700 dark:text-gray-300">
-                <span className="w-5 h-5 text-purple-600 flex items-center justify-center">
+              <div className="flex items-center gap-2 sm:gap-3 text-sm sm:text-base text-gray-700 dark:text-gray-300">
+                <span className="w-4 h-4 sm:w-5 sm:h-5 text-purple-600 flex items-center justify-center flex-shrink-0">
                   📍
                 </span>
                 <span>Dhaka, Bangladesh</span>
@@ -139,10 +139,10 @@ export function Contact() {
 
             {/* Social Links */}
             <div>
-              <h4 className="text-gray-900 dark:text-white mb-4">
+              <h4 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4">
                 Connect with me
               </h4>
-              <div className="flex gap-4">
+              <div className="flex gap-3 sm:gap-4">
                 {socialLinks.map((link, index) => (
                   <motion.a
                     key={link.label}
@@ -159,10 +159,10 @@ export function Contact() {
                     }}
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
-                    className={`w-12 h-12 bg-white dark:bg-gray-700 rounded-full flex items-center justify-center text-gray-600 dark:text-gray-300 ${link.color} transition-colors shadow-md`}
+                    className={`w-10 h-10 sm:w-12 sm:h-12 bg-white dark:bg-gray-700 rounded-full flex items-center justify-center text-gray-600 dark:text-gray-300 ${link.color} transition-colors shadow-md`}
                     aria-label={link.label}
                   >
-                    <link.icon className="w-5 h-5" />
+                    <link.icon className="w-4 h-4 sm:w-5 sm:h-5" />
                   </motion.a>
                 ))}
               </div>
@@ -196,12 +196,12 @@ export function Contact() {
           >
             <form
               onSubmit={handleSubmit}
-              className="bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-lg"
+              className="bg-white dark:bg-gray-900 rounded-2xl p-6 sm:p-8 shadow-lg"
             >
-              <div className="mb-6">
+              <div className="mb-4 sm:mb-6">
                 <label
                   htmlFor="name"
-                  className="block text-gray-900 dark:text-white mb-2"
+                  className="block text-sm sm:text-base text-gray-900 dark:text-white mb-2"
                 >
                   Name
                 </label>
@@ -216,15 +216,15 @@ export function Contact() {
                       name: e.target.value,
                     })
                   }
-                  className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent transition-all text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500"
+                  className="w-full px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent transition-all text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500"
                   placeholder="Your name"
                 />
               </div>
 
-              <div className="mb-6">
+              <div className="mb-4 sm:mb-6">
                 <label
                   htmlFor="email"
-                  className="block text-gray-900 dark:text-white mb-2"
+                  className="block text-sm sm:text-base text-gray-900 dark:text-white mb-2"
                 >
                   Email
                 </label>
@@ -239,15 +239,15 @@ export function Contact() {
                       email: e.target.value,
                     })
                   }
-                  className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent transition-all text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500"
+                  className="w-full px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent transition-all text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500"
                   placeholder="your.email@example.com"
                 />
               </div>
 
-              <div className="mb-6">
+              <div className="mb-4 sm:mb-6">
                 <label
                   htmlFor="message"
-                  className="block text-gray-900 dark:text-white mb-2"
+                  className="block text-sm sm:text-base text-gray-900 dark:text-white mb-2"
                 >
                   Message
                 </label>
@@ -262,7 +262,7 @@ export function Contact() {
                       message: e.target.value,
                     })
                   }
-                  className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent transition-all resize-none text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500"
+                  className="w-full px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent transition-all resize-none text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500"
                   placeholder="Tell me about your project..."
                 />
               </div>
@@ -272,7 +272,7 @@ export function Contact() {
                 disabled={isSubmitting}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full px-6 py-3 bg-gray-900 dark:bg-purple-600 text-white rounded-lg hover:bg-gray-800 dark:hover:bg-purple-700 transition-colors flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full px-5 sm:px-6 py-2.5 sm:py-3 text-sm sm:text-base bg-gray-900 dark:bg-purple-600 text-white rounded-lg hover:bg-gray-800 dark:hover:bg-purple-700 transition-colors flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? "Sending..." : "Send Message"}
                 <Send className="w-4 h-4" />

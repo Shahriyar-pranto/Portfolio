@@ -3,6 +3,10 @@
 import { motion } from "motion/react";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
+import profileImageImport from '../assets/profileImage.jpg';
+
+// Extract src from Next.js StaticImageData object
+const profileImage = typeof profileImageImport === 'string' ? profileImageImport : profileImageImport.src;
 
 // INSTRUCTIONS: To use your own profile image:
 // 1. Add your image to the /assets folder (e.g., profile.jpg)
@@ -255,9 +259,9 @@ const JSIcon = () => (
 
 export function Hero() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 px-4 sm:px-6 lg:px-8 pt-20 sm:pt-0 transition-colors duration-300">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 px-4 sm:px-6 lg:px-8 pt-24 sm:pt-20 md:pt-0 transition-colors duration-300">
       <div className="max-w-7xl w-full">
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <div className="grid md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -280,7 +284,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="text-gray-900 dark:text-white mb-4 sm:mb-6"
+              className="text-gray-900 dark:text-white mb-4 sm:mb-6 leading-tight"
             >
               Hi, I'm Ahmed Shahriyar
               <br />
@@ -344,7 +348,7 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative order-1 md:order-2"
           >
-            <div className="relative w-full aspect-square max-w-md md:max-w-lg mx-auto">
+            <div className="relative w-full aspect-square max-w-xs sm:max-w-md md:max-w-lg mx-auto">
               {/* Decorative elements */}
               <motion.div
                 animate={{
@@ -373,17 +377,17 @@ export function Hero() {
               {/* Profile placeholder */}
               <div className="absolute inset-16 rounded-full overflow-hidden shadow-2xl">
                 <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1649589244330-09ca58e4fa64?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjB3b21hbiUyMHBvcnRyYWl0fGVufDF8fHx8MTc2MzczNDUzOHww&ixlib=rb-4.1.0&q=80&w=1080"
+                  src={profileImage}
                   alt="Ahmed Shahriyar - UI/UX Designer"
                   className="w-full h-full object-cover"
                 />
               </div>
 
-              {/* Floating skill badges */}
+              {/* Floating skill badges - hidden on mobile, visible on md+ */}
               <motion.div
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 2, repeat: Infinity }}
-                className="absolute -top-4 right-12 w-16 h-16 flex items-center justify-center bg-white rounded-full shadow-lg"
+                className="hidden md:flex absolute -top-4 right-12 w-12 h-12 md:w-16 md:h-16 items-center justify-center bg-white rounded-full shadow-lg"
               >
                 <FigmaIcon />
               </motion.div>
@@ -395,7 +399,7 @@ export function Hero() {
                   delay: 0.3,
                   repeat: Infinity,
                 }}
-                className="absolute top-1/3 -left-4 w-16 h-16 flex items-center justify-center bg-white rounded-full shadow-lg"
+                className="hidden md:flex absolute top-1/3 -left-4 w-12 h-12 md:w-16 md:h-16 items-center justify-center bg-white rounded-full shadow-lg"
               >
                 <AdobeXDIcon />
               </motion.div>
@@ -407,7 +411,7 @@ export function Hero() {
                   delay: 0.6,
                   repeat: Infinity,
                 }}
-                className="absolute -bottom-4 left-12 w-16 h-16 flex items-center justify-center bg-white rounded-full shadow-lg"
+                className="hidden md:flex absolute -bottom-4 left-12 w-12 h-12 md:w-16 md:h-16 items-center justify-center bg-white rounded-full shadow-lg"
               >
                 <FramerIcon />
               </motion.div>
@@ -419,7 +423,7 @@ export function Hero() {
                   delay: 0.9,
                   repeat: Infinity,
                 }}
-                className="absolute top-1/3 -right-4 w-16 h-16 flex items-center justify-center bg-white rounded-full shadow-lg"
+                className="hidden md:flex absolute top-1/3 -right-4 w-12 h-12 md:w-16 md:h-16 items-center justify-center bg-white rounded-full shadow-lg"
               >
                 <IllustratorIcon />
               </motion.div>
@@ -431,7 +435,7 @@ export function Hero() {
                   delay: 1.2,
                   repeat: Infinity,
                 }}
-                className="absolute bottom-1/3 -right-4 w-16 h-16 flex items-center justify-center bg-white rounded-full shadow-lg"
+                className="hidden md:flex absolute bottom-1/3 -right-4 w-12 h-12 md:w-16 md:h-16 items-center justify-center bg-white rounded-full shadow-lg"
               >
                 <PhotoshopIcon />
               </motion.div>
@@ -443,7 +447,7 @@ export function Hero() {
                   delay: 1.5,
                   repeat: Infinity,
                 }}
-                className="absolute -top-4 left-12 w-16 h-16 flex items-center justify-center bg-white rounded-full shadow-lg"
+                className="hidden md:flex absolute -top-4 left-12 w-12 h-12 md:w-16 md:h-16 items-center justify-center bg-white rounded-full shadow-lg"
               >
                 <HTMLIcon />
               </motion.div>
@@ -455,7 +459,7 @@ export function Hero() {
                   delay: 1.8,
                   repeat: Infinity,
                 }}
-                className="absolute bottom-1/3 -left-4 w-16 h-16 flex items-center justify-center bg-white rounded-full shadow-lg"
+                className="hidden md:flex absolute bottom-1/3 -left-4 w-12 h-12 md:w-16 md:h-16 items-center justify-center bg-white rounded-full shadow-lg"
               >
                 <CSSIcon />
               </motion.div>
@@ -467,7 +471,7 @@ export function Hero() {
                   delay: 2.1,
                   repeat: Infinity,
                 }}
-                className="absolute -bottom-4 right-12 w-16 h-16 flex items-center justify-center bg-white rounded-full shadow-lg"
+                className="hidden md:flex absolute -bottom-4 right-12 w-12 h-12 md:w-16 md:h-16 items-center justify-center bg-white rounded-full shadow-lg"
               >
                 <JSIcon />
               </motion.div>
