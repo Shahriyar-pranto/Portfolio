@@ -284,7 +284,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="text-gray-900 dark:text-white mb-4 sm:mb-6"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6 leading-tight"
             >
               Hi, I'm Ahmed Shahriyar
               <br />
@@ -348,7 +348,7 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative order-1 md:order-2"
           >
-            <div className="relative w-full aspect-square max-w-md md:max-w-lg mx-auto">
+            <div className="relative w-full aspect-square max-w-xs sm:max-w-md md:max-w-lg mx-auto">
               {/* Animated gradient backdrop */}
               <motion.div
                 animate={{
@@ -359,12 +359,12 @@ export function Hero() {
                   rotate: { duration: 25, repeat: Infinity, ease: "linear" },
                   scale: { duration: 5, repeat: Infinity, ease: "easeInOut" },
                 }}
-                className="absolute -inset-4 bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 dark:from-purple-600 dark:via-pink-600 dark:to-blue-600 opacity-15 blur-[80px] rounded-[4rem]"
+                className="absolute -inset-2 sm:-inset-3 md:-inset-4 bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 dark:from-purple-600 dark:via-pink-600 dark:to-blue-600 opacity-15 blur-[40px] sm:blur-[60px] md:blur-[80px] rounded-[2rem] sm:rounded-[3rem] md:rounded-[4rem]"
               />
 
               {/* Outer container with gradient - Rectangle */}
               <div
-                className="absolute inset-0 rounded-[3.5rem]"
+                className="absolute inset-0 rounded-[2rem] sm:rounded-[2.5rem] md:rounded-[3.5rem]"
                 style={{
                   background: "linear-gradient(135deg, rgba(168,85,247,0.15) 0%, rgba(236,72,153,0.15) 50%, rgba(59,130,246,0.15) 100%)",
                   boxShadow: "0 0 50px rgba(168,85,247,0.25)",
@@ -376,7 +376,7 @@ export function Hero() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.6, duration: 0.6 }}
-                className="absolute inset-8 border-[2px] border-dashed border-purple-300/50 dark:border-purple-400/40 rounded-2xl"
+                className="absolute inset-4 sm:inset-6 md:inset-8 border-[2px] border-dashed border-purple-300/50 dark:border-purple-400/40 rounded-xl sm:rounded-2xl"
               />
 
               {/* Profile image container - Rectangle */}
@@ -390,7 +390,7 @@ export function Hero() {
                   delay: 0.5, 
                   duration: 0.6,
                 }}
-                className="absolute inset-16 overflow-hidden shadow-2xl ring-8 ring-white/50 dark:ring-gray-800/50 rounded-2xl"
+                className="absolute inset-8 sm:inset-12 md:inset-16 overflow-hidden shadow-2xl ring-4 sm:ring-6 md:ring-8 ring-white/50 dark:ring-gray-800/50 rounded-xl sm:rounded-2xl"
                 style={{
                   boxShadow: "0 25px 70px rgba(0,0,0,0.25), 0 0 50px rgba(168,85,247,0.25)",
                 }}
@@ -414,7 +414,7 @@ export function Hero() {
                 transition={{ delay: 0.8, duration: 0.6, scale: { duration: 0.2 }, rotate: { duration: 0.2 } }}
                 whileHover={{ scale: 1.25, rotate: 5 }}
                 whileTap={{ scale: 0.95 }}
-                className="absolute -top-6 -right-6 w-20 h-20 flex items-center justify-center bg-gradient-to-br from-white to-blue-50 dark:from-gray-800 dark:to-blue-900/30 rounded-3xl shadow-2xl ring-4 ring-blue-100 dark:ring-blue-700/50 backdrop-blur-sm cursor-pointer"
+                className="absolute -top-3 -right-3 sm:-top-6 sm:-right-6 w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 flex items-center justify-center bg-gradient-to-br from-white to-blue-50 dark:from-gray-800 dark:to-blue-900/30 rounded-xl sm:rounded-2xl md:rounded-3xl shadow-lg sm:shadow-2xl ring-2 sm:ring-4 ring-blue-100 dark:ring-blue-700/50 backdrop-blur-sm cursor-pointer z-10"
                 style={{
                   boxShadow: "0 15px 40px rgba(59,130,246,0.4), 0 0 0 1px rgba(255,255,255,0.1)",
                 }}
@@ -433,7 +433,7 @@ export function Hero() {
                 transition={{ delay: 0.9, duration: 0.6, scale: { duration: 0.2 }, rotate: { duration: 0.2 } }}
                 whileHover={{ scale: 1.25, rotate: -5 }}
                 whileTap={{ scale: 0.95 }}
-                className="absolute -top-6 -left-6 w-20 h-20 flex items-center justify-center bg-gradient-to-br from-white to-purple-50 dark:from-gray-800 dark:to-purple-900/30 rounded-3xl shadow-2xl ring-4 ring-purple-100 dark:ring-purple-700/50 backdrop-blur-sm cursor-pointer"
+                className="absolute -top-3 -left-3 sm:-top-6 sm:-left-6 w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 flex items-center justify-center bg-gradient-to-br from-white to-purple-50 dark:from-gray-800 dark:to-purple-900/30 rounded-xl sm:rounded-2xl md:rounded-3xl shadow-lg sm:shadow-2xl ring-2 sm:ring-4 ring-purple-100 dark:ring-purple-700/50 backdrop-blur-sm cursor-pointer z-10"
                 style={{
                   boxShadow: "0 15px 40px rgba(168,85,247,0.4), 0 0 0 1px rgba(255,255,255,0.1)",
                 }}
@@ -452,7 +452,7 @@ export function Hero() {
                 transition={{ delay: 1.2, duration: 0.6, scale: { duration: 0.2 }, rotate: { duration: 0.2 } }}
                 whileHover={{ scale: 1.25, rotate: 5 }}
                 whileTap={{ scale: 0.95 }}
-                className="absolute -bottom-6 -right-6 w-20 h-20 flex items-center justify-center bg-gradient-to-br from-white to-orange-50 dark:from-gray-800 dark:to-orange-900/30 rounded-3xl shadow-2xl ring-4 ring-orange-100 dark:ring-orange-700/50 backdrop-blur-sm cursor-pointer"
+                className="absolute -bottom-3 -right-3 sm:-bottom-6 sm:-right-6 w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 flex items-center justify-center bg-gradient-to-br from-white to-orange-50 dark:from-gray-800 dark:to-orange-900/30 rounded-xl sm:rounded-2xl md:rounded-3xl shadow-lg sm:shadow-2xl ring-2 sm:ring-4 ring-orange-100 dark:ring-orange-700/50 backdrop-blur-sm cursor-pointer z-10"
                 style={{
                   boxShadow: "0 15px 40px rgba(249,115,22,0.4), 0 0 0 1px rgba(255,255,255,0.1)",
                 }}
@@ -471,7 +471,7 @@ export function Hero() {
                 transition={{ delay: 1.1, duration: 0.6, scale: { duration: 0.2 }, rotate: { duration: 0.2 } }}
                 whileHover={{ scale: 1.25, rotate: 5 }}
                 whileTap={{ scale: 0.95 }}
-                className="absolute -bottom-6 -left-6 w-20 h-20 flex items-center justify-center bg-gradient-to-br from-white to-yellow-50 dark:from-gray-800 dark:to-yellow-900/30 rounded-3xl shadow-2xl ring-4 ring-yellow-100 dark:ring-yellow-700/50 backdrop-blur-sm cursor-pointer"
+                className="absolute -bottom-3 -left-3 sm:-bottom-6 sm:-left-6 w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 flex items-center justify-center bg-gradient-to-br from-white to-yellow-50 dark:from-gray-800 dark:to-yellow-900/30 rounded-xl sm:rounded-2xl md:rounded-3xl shadow-lg sm:shadow-2xl ring-2 sm:ring-4 ring-yellow-100 dark:ring-yellow-700/50 backdrop-blur-sm cursor-pointer z-10"
                 style={{
                   boxShadow: "0 15px 40px rgba(234,179,8,0.4), 0 0 0 1px rgba(255,255,255,0.1)",
                 }}

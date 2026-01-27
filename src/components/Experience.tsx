@@ -84,7 +84,7 @@ export function Experience() {
                 <div className={`${index % 2 === 0 ? 'md:text-right md:pr-8 lg:pr-12' : 'md:col-start-2 md:pl-8 lg:pl-12'}`}>
                   <motion.div
                     whileHover={{ scale: 1.02 }}
-                    className="bg-white dark:bg-gray-800 rounded-2xl p-5 sm:p-6 shadow-lg border border-gray-100 dark:border-gray-700"
+                    className="bg-white dark:bg-gray-800 rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 shadow-lg border border-gray-100 dark:border-gray-700"
                   >
                     {exp.current && (
                       <span className="inline-block px-3 py-1 text-xs sm:text-sm bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-300 rounded-full mb-3">
@@ -143,7 +143,7 @@ export function Experience() {
         >
           <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white text-center mb-6 sm:mb-8">Education & Certifications</h3>
           
-          <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
             <div className="bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-900/20 dark:to-blue-900/20 rounded-2xl p-5 sm:p-6 border border-purple-100 dark:border-purple-800">
               <div className="mb-3">
                 <span className="inline-block px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-300 rounded-full mb-3">

@@ -142,7 +142,7 @@ export function Contact() {
               <h4 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4">
                 Connect with me
               </h4>
-              <div className="flex gap-3 sm:gap-4">
+              <div className="flex flex-wrap gap-2 sm:gap-3 md:gap-4">
                 {socialLinks.map((link, index) => (
                   <motion.a
                     key={link.label}
@@ -159,7 +159,7 @@ export function Contact() {
                     }}
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
-                    className={`w-10 h-10 sm:w-12 sm:h-12 bg-white dark:bg-gray-700 rounded-full flex items-center justify-center text-gray-600 dark:text-gray-300 ${link.color} transition-colors shadow-md`}
+                    className={`w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 bg-white dark:bg-gray-700 rounded-full flex items-center justify-center text-gray-600 dark:text-gray-300 ${link.color} transition-colors shadow-md`}
                     aria-label={link.label}
                   >
                     <link.icon className="w-4 h-4 sm:w-5 sm:h-5" />
@@ -177,7 +177,7 @@ export function Contact() {
                   : { opacity: 0, scale: 0.8 }
               }
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="mt-8 inline-flex items-center gap-2 px-4 py-2 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-300 rounded-full"
+              className="mt-6 sm:mt-8 inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-300 rounded-full"
             >
               <span className="w-2 h-2 bg-green-600 rounded-full animate-pulse"></span>
               Available for freelance projects
@@ -196,7 +196,7 @@ export function Contact() {
           >
             <form
               onSubmit={handleSubmit}
-              className="bg-white dark:bg-gray-900 rounded-2xl p-6 sm:p-8 shadow-lg"
+              className="bg-white dark:bg-gray-900 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 shadow-lg"
             >
               <div className="mb-4 sm:mb-6">
                 <label

@@ -69,7 +69,7 @@ export function Navigation({ activeSection, setActiveSection }: NavigationProps)
             className="cursor-pointer"
             onClick={() => scrollToSection('home')}
           >
-            <span className="font-inertia text-purple-900 dark:text-purple-400 text-lg sm:text-xl md:text-2xl tracking-wide">Ahmed Shahriyar</span>
+            <span className="font-inertia text-purple-900 dark:text-purple-400 text-base sm:text-lg md:text-xl lg:text-2xl tracking-wide">Ahmed Shahriyar</span>
           </motion.div>
 
           {/* Desktop Navigation */}
@@ -122,7 +122,7 @@ export function Navigation({ activeSection, setActiveSection }: NavigationProps)
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`block w-full text-left px-4 py-3 rounded-lg transition-colors text-base ${
+                  className={`block w-full text-left px-4 py-2.5 sm:py-3 rounded-lg transition-colors text-sm sm:text-base ${
                     activeSection === item.id
                       ? 'bg-gray-900 dark:bg-purple-600 text-white'
                       : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
