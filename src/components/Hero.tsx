@@ -1,3 +1,5 @@
+'use client';
+
 import { motion } from "motion/react";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
