@@ -3,8 +3,8 @@ import { ThemeProvider } from "@/components/ThemeContext";
 import "../styles/globals.css";
 
 export const metadata: Metadata = {
-  title: "Interactive Portfolio Website",
-  description: "Ahmed Shahriyar's Portfolio",
+  title: "Ahmed Shahriyar Parvez Pranto | UI/UX Designer",
+  description: "UI/UX designer crafting intuitive web & mobile experiences. View the portfolio of Ahmed Shahriyar Parvez Pranto, focused on user-centered design.",
 };
 
 export default function RootLayout({

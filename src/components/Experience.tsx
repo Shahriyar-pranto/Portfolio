@@ -145,14 +145,9 @@ export function Experience() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
             <div className="bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-900/20 dark:to-blue-900/20 rounded-2xl p-5 sm:p-6 border border-purple-100 dark:border-purple-800">
-              <div className="mb-3">
-                <span className="inline-block px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-300 rounded-full mb-3">
-                  In Progress
-                </span>
-              </div>
               <h4 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-2">Master's in ICT</h4>
               <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300 mb-1">Bangladesh University of Professionals</p>
-              <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">Expected 2025</p>
+              <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">Graduated 2026</p>
             </div>
 
             <div className="bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-5 sm:p-6 border border-gray-200 dark:border-gray-600">

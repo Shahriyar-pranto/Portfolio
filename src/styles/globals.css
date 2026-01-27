@@ -155,6 +155,6 @@ html {
 /* Custom font for name/logo */
 .font-inertia {
   font-family: 'Inertia', sans-serif;
-  font-weight: 800;
+  /* font-weight: 800; */
   letter-spacing: 0.02em;
 }
