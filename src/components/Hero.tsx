@@ -286,9 +286,10 @@ export function Hero() {
               transition={{ delay: 0.3 }}
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6 leading-tight"
             >
-              Hi, I'm Ahmed Shahriyar
+              Hi, I'm <br />
+              {'Ahmed Shahriyar'}
               <br />
-              <span className="text-purple-600 dark:text-purple-400">
+              <span className="text-purple-600 dark:text-purple-400 block mt-2 sm:mt-3">
                 UI/UX Designer
               </span>
             </motion.h1>
@@ -299,12 +300,7 @@ export function Hero() {
               transition={{ delay: 0.4 }}
               className="text-gray-600 dark:text-gray-400 mb-6 sm:mb-8 max-w-lg text-sm sm:text-base"
             >
-              Creative and detail-oriented UI/UX Designer with
-              experience in designing for web, mobile, and CRM
-              platforms. Skilled in Figma, Adobe XD, Framer and
-              prototyping tools. I focus on building intuitive,
-              user-centric interfaces that enhance engagement
-              and support business growth.
+              UI/UX Designer with experience in web, mobile, and CRM platforms. Skilled in Figma, Framer, and user research, I create intuitive, user-focused designs that balance creativity with functionality. Passionate about solving problems, optimizing digital journeys, and delivering impactful experiences that drive business growth.
             </motion.p>
 
             <motion.div

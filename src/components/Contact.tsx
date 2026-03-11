@@ -55,24 +55,28 @@ export function Contact() {
       icon: Mail,
       label: "Email",
       href: "mailto:shahriyarpranto@gmail.com",
+      target: "_blank",
       color: "hover:text-red-600 dark:hover:text-red-400",
     },
     {
       icon: Linkedin,
       label: "LinkedIn",
-      href: "https://www.linkedin.com/ahmed-pranto",
+      href: "https://www.linkedin.com/in/ahmed-pranto/",
+      target: "_blank",
       color: "hover:text-blue-600 dark:hover:text-blue-400",
     },
     {
       icon: BehanceIcon,
       label: "Behance",
       href: "https://www.behance.net/shahriyarpranto",
+      target: "_blank",
       color: "hover:text-blue-500 dark:hover:text-blue-300",
     },
     {
       icon: Facebook,
       label: "Facebook",
       href: "https://www.facebook.com/shahriyar.pranto",
+      target: "_blank",
       color: "hover:text-blue-400 dark:hover:text-blue-300",
     },
   ];
@@ -147,6 +151,8 @@ export function Contact() {
                   <motion.a
                     key={link.label}
                     href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     initial={{ opacity: 0, y: 20 }}
                     animate={
                       isInView
