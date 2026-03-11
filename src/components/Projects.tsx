@@ -9,11 +9,11 @@ import { ImageWithFallback } from './figma/ImageWithFallback';
 const projects = [
   {
     id: 1,
-    title: 'E-Commerce Mobile App',
-    category: 'Mobile Design',
-    description: 'A modern e-commerce app with seamless checkout experience and personalized recommendations.',
+    title: 'ApplyGoal Website',
+    category: 'Website',
+    description: 'ApplyGoal | Ai-Powered Student Recruitment Portal',
     image: 'https://images.unsplash.com/photo-1609921212029-bb5a28e60960?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2JpbGUlMjBhcHAlMjBkZXNpZ258ZW58MXx8fHwxNzYzNzcxNDg4fDA&ixlib=rb-4.1.0&q=80&w=1080',
-    tags: ['Mobile', 'iOS', 'Android', 'E-commerce'],
+    tags: ['Web', 'AI', 'Student Recruitment'],
     color: 'from-purple-500 to-pink-500',
   },
   {
