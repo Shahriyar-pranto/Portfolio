@@ -156,6 +156,40 @@ export function Experience() {
               <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">Graduated 2020</p>
             </div>
 
+            <div className="bg-gradient-to-br from-indigo-50 to-violet-50 dark:from-indigo-900/20 dark:to-violet-900/20 rounded-2xl p-5 sm:p-6 border border-indigo-100 dark:border-indigo-800">
+              <h4 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-2">Describe cloud computing</h4>
+              <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300 mb-1">Microsoft Learn</p>
+              <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">2025</p>
+              <a 
+                href="https://learn.microsoft.com/api/achievements/share/en-us/AhmedShahriyarParvezPranto-0893/3773JX9H?sharingId=EC7EF7CE16A7A876"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-indigo-700 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-300 mt-2 transition-colors text-sm"
+              >
+                <span>View Certificate</span>
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </div>
+
+            <div className="bg-gradient-to-br from-teal-50 to-cyan-50 dark:from-teal-900/20 dark:to-cyan-900/20 rounded-2xl p-5 sm:p-6 border border-teal-100 dark:border-teal-800">
+              <h4 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-2">Introduction to AI concepts</h4>
+              <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300 mb-1">Microsoft Learn</p>
+              <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">2025</p>
+              <a 
+                href="https://learn.microsoft.com/api/achievements/share/en-us/AhmedShahriyarParvezPranto-0893/FQQFMKJX?sharingId=EC7EF7CE16A7A876"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-teal-700 dark:text-teal-400 hover:text-teal-800 dark:hover:text-teal-300 mt-2 transition-colors text-sm"
+              >
+                <span>View Certificate</span>
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </div>
+
             <div className="bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 rounded-2xl p-5 sm:p-6 border border-green-100 dark:border-green-800">
               <h4 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-2">Foundation of User Experience & Design Thinking</h4>
               <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300 mb-1">Microsoft Learn</p>
@@ -207,9 +241,7 @@ export function Experience() {
               </a>
             </div>
 
-            
 
-            
           </div>
         </motion.div>
       </div>
