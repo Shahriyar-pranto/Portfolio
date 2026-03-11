@@ -5,61 +5,72 @@ import { useInView } from 'motion/react';
 import { useRef, useState } from 'react';
 import { ExternalLink, ArrowRight } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
-
+import applyGoalImage from '@/assets/og-image-applygoal.jpg';
+import applyGoalAdminImage from '@/assets/ApplyGoal-Admin-Panel.jpg';
+import applyGoalCrmImage from '@/assets/ApplyGoal-CRM-Panel.jpg';
+import cyberSquadImage from '@/assets/CyberSquadInc-Landing-Page.png';
+import jubaierRayanImage from '@/assets/Jubaier-Rayan-Portfolio.jpg';
+import bdjobsRecruiterImage from '@/assets/bdjobs-recruiter.png';
+const applyGoalImageSrc = typeof applyGoalImage === 'string' ? applyGoalImage : applyGoalImage.src;
+const applyGoalAdminImageSrc = typeof applyGoalAdminImage === 'string' ? applyGoalAdminImage : applyGoalAdminImage.src;
+const applyGoalCrmImageSrc = typeof applyGoalCrmImage === 'string' ? applyGoalCrmImage : applyGoalCrmImage.src;
+const cyberSquadImageSrc = typeof cyberSquadImage === 'string' ? cyberSquadImage : cyberSquadImage.src;
+const jubaierRayanImageSrc = typeof jubaierRayanImage === 'string' ? jubaierRayanImage : jubaierRayanImage.src; 
+const bdjobsRecruiterImageSrc = typeof bdjobsRecruiterImage === 'string' ? bdjobsRecruiterImage : bdjobsRecruiterImage.src;
 const projects = [
   {
     id: 1,
     title: 'ApplyGoal Website',
     category: 'Website',
     description: 'ApplyGoal | Ai-Powered Student Recruitment Portal',
-    image: 'https://images.unsplash.com/photo-1609921212029-bb5a28e60960?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2JpbGUlMjBhcHAlMjBkZXNpZ258ZW58MXx8fHwxNzYzNzcxNDg4fDA&ixlib=rb-4.1.0&q=80&w=1080',
+    image: applyGoalImageSrc,
     tags: ['Web', 'AI', 'Student Recruitment'],
-    color: 'from-purple-500 to-pink-500',
+    color: 'from-blue-500 to-cyan-500',
   },
   {
     id: 2,
-    title: 'Analytics Dashboard',
+    title: 'Applygoal Website Admin Panel',
     category: 'Web Application',
-    description: 'Comprehensive analytics platform for tracking business metrics and generating insights.',
-    image: 'https://images.unsplash.com/photo-1575388902449-6bca946ad549?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3ZWIlMjBkYXNoYm9hcmQlMjBpbnRlcmZhY2V8ZW58MXx8fHwxNzYzNzg1MDY3fDA&ixlib=rb-4.1.0&q=80&w=1080',
-    tags: ['Web', 'Dashboard', 'Data Viz', 'SaaS'],
+    description: 'Applygoal Website Admin Panel | Ai-Powered Student Recruitment Portal',
+    image: applyGoalAdminImageSrc,
+    tags: ['Web', 'Dashboard', 'Admin Panel', 'SaaS'],
     color: 'from-blue-500 to-cyan-500',
   },
   {
     id: 3,
-    title: 'Fitness Tracking App',
-    category: 'Mobile Design',
-    description: 'Health and fitness app with workout tracking, nutrition logging, and progress visualization.',
-    image: 'https://images.unsplash.com/photo-1658297063569-162817482fb6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlY29tbWVyY2UlMjB3ZWJzaXRlfGVufDF8fHx8MTc2MzcxNDkwOHww&ixlib=rb-4.1.0&q=80&w=1080',
-    tags: ['Mobile', 'Health', 'Fitness', 'iOS'],
-    color: 'from-green-500 to-emerald-500',
+    title: 'ApplyGoal CRM System',
+    category: 'Web Application',
+    description: 'ApplyGoal CRM is a purpose-built platform that transforms how institutions and recruitment partners manage student admissions—centralizing data, automating workflows, and enhancing engagement from one intuitive dashboard...',
+    image: applyGoalCrmImageSrc,
+    tags: ['Web', 'CRM', 'AI', 'Student Recruitment'],
+    color: 'from-blue-500 to-cyan-500',
   },
   {
     id: 4,
-    title: 'Creative Portfolio',
+    title: 'Cyber Squad Website',
     category: 'Website',
-    description: 'Minimalist portfolio website for showcasing creative work with smooth animations.',
-    image: 'https://images.unsplash.com/photo-1521391406205-4a6af174a4c2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxVSSUyMGRlc2lnbiUyMHdvcmtzcGFjZXxlbnwxfHx8fDE3NjM3ODUwNjd8MA&ixlib=rb-4.1.0&q=80&w=1080',
-    tags: ['Web', 'Portfolio', 'Interactive'],
-    color: 'from-orange-500 to-red-500',
+    description: 'Cyber Squad Inc. provides cutting-edge SAAS software solutions, specializing in web development, AI integration, cybersecurity, mobile app development, and more. Empowering businesses with innovative tech solutions.',
+    image: cyberSquadImageSrc,
+    tags: ['Web', 'SAAS', 'Software Development', 'Cybersecurity'],
+    color: 'from-gray-900 to-gray-500',
   },
     {
     id: 5,
-    title: 'Fitness Tracking App',
-    category: 'Mobile Design',
-    description: 'Health and fitness app with workout tracking, nutrition logging, and progress visualization.',
-    image: 'https://images.unsplash.com/photo-1658297063569-162817482fb6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlY29tbWVyY2UlMjB3ZWJzaXRlfGVufDF8fHx8MTc2MzcxNDkwOHww&ixlib=rb-4.1.0&q=80&w=1080',
-    tags: ['Mobile', 'Health', 'Fitness', 'iOS'],
-    color: 'from-green-500 to-emerald-500',
+    title: 'Jubaier Rayan Professional Portfolio',
+    category: 'Portfolio',
+    description: 'Jubaier Rayan | Professionl Portfolio | Co-Founder & CEO | Cyber Squad Inc. |  Founder & CEO | Edu News | Skill Now',
+    image: jubaierRayanImageSrc,
+    tags: ['Web', 'Portfolio', 'Interactive'],
+    color: 'from-blue-500 to-gray-500',
   },
   {
     id: 6,
-    title: 'Creative Portfolio',
-    category: 'Website',
-    description: 'Minimalist portfolio website for showcasing creative work with smooth animations.',
-    image: 'https://images.unsplash.com/photo-1521391406205-4a6af174a4c2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxVSSUyMGRlc2lnbiUyMHdvcmtzcGFjZXxlbnwxfHx8fDE3NjM3ODUwNjd8MA&ixlib=rb-4.1.0&q=80&w=1080',
-    tags: ['Web', 'Portfolio', 'Interactive'],
-    color: 'from-orange-500 to-red-500',
+    title: 'Bdjobs Recruiter Panel',
+    category: 'Web Application',
+    description: 'Faster Hiring, Better Matches: Sign In to Bdjobs Recruiter',
+    image: bdjobsRecruiterImageSrc,
+    tags: ['Web', 'Dashboard', 'Admin Panel', 'SaaS'],
+    color: 'from-purple-900 to-purple-500',
   },
 ];
 
