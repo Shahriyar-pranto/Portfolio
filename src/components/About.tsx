@@ -7,8 +7,8 @@ import { Award, Users, Briefcase, Coffee } from 'lucide-react';
 
 const stats = [
   { icon: Briefcase, value: '3+', label: 'Years Experience' },
-  { icon: Users, value: '40+', label: 'Projects Completed' },
-  { icon: Award, value: '2+', label: 'Certifications' },
+  { icon: Users, value: '10+', label: 'Live Projects Completed' },
+  { icon: Award, value: '4+', label: 'Certifications' },
   { icon: Coffee, value: '∞', label: 'Cups of Coffee' },
 ];
 

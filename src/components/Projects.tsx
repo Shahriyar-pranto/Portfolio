@@ -26,6 +26,8 @@ const projects = [
     image: applyGoalImageSrc,
     tags: ['Web', 'AI', 'Student Recruitment'],
     color: 'from-blue-500 to-cyan-500',
+    link: 'https://applygoal.com',
+    linkLabel: 'Visit Website',
   },
   {
     id: 2,
@@ -35,6 +37,8 @@ const projects = [
     image: applyGoalAdminImageSrc,
     tags: ['Web', 'Dashboard', 'Admin Panel', 'SaaS'],
     color: 'from-blue-500 to-cyan-500',
+    link: '',
+    linkLabel: 'View Project',
   },
   {
     id: 3,
@@ -44,6 +48,8 @@ const projects = [
     image: applyGoalCrmImageSrc,
     tags: ['Web', 'CRM', 'AI', 'Student Recruitment'],
     color: 'from-blue-500 to-cyan-500',
+    link: 'https://crm.applygoal.com',
+    linkLabel: 'Visit CRM',
   },
   {
     id: 4,
@@ -53,8 +59,10 @@ const projects = [
     image: cyberSquadImageSrc,
     tags: ['Web', 'SAAS', 'Software Development', 'Cybersecurity'],
     color: 'from-gray-900 to-gray-500',
+    link: 'https://cybersquadinc.com',
+    linkLabel: 'Visit Website',
   },
-    {
+  {
     id: 5,
     title: 'Jubaier Rayan Professional Portfolio',
     category: 'Portfolio',
@@ -62,6 +70,8 @@ const projects = [
     image: jubaierRayanImageSrc,
     tags: ['Web', 'Portfolio', 'Interactive'],
     color: 'from-blue-500 to-gray-500',
+    link: 'https://jrsakif.com/',
+    linkLabel: 'View Portfolio',
   },
   {
     id: 6,
@@ -71,6 +81,8 @@ const projects = [
     image: bdjobsRecruiterImageSrc,
     tags: ['Web', 'Dashboard', 'Admin Panel', 'SaaS'],
     color: 'from-purple-900 to-purple-500',
+    link: 'https://recruiter.bdjobs.com',
+    linkLabel: 'Visit Panel',
   },
 ];
 
@@ -193,15 +205,20 @@ export function Projects() {
                   ))}
                 </div>
 
-                {/* View Case Study Link */}
-                <motion.div
-                  initial={{ x: 0 }}
-                  animate={hoveredProject === project.id ? { x: 10 } : { x: 0 }}
-                  className="inline-flex items-center gap-2 text-sm sm:text-base text-gray-900 dark:text-white"
-                >
-                  View Case Study
-                  <ArrowRight className="w-4 h-4" />
-                </motion.div>
+                {/* Project link button - add link + linkLabel to each project above */}
+                {project.link ? (
+                  <motion.a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    initial={{ x: 0 }}
+                    animate={hoveredProject === project.id ? { x: 4 } : { x: 0 }}
+                    className="inline-flex items-center gap-2 px-4 py-2 text-sm sm:text-base font-medium text-gray-900 dark:text-white bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 rounded-lg transition-colors"
+                  >
+                    {project.linkLabel ?? 'View Project'}
+                    <ArrowRight className="w-4 h-4" />
+                  </motion.a>
+                ) : null}
               </div>
             </motion.div>
           ))}
