@@ -3,6 +3,7 @@
 import { motion } from "motion/react";
 import { useInView } from "motion/react";
 import { useRef, useState } from "react";
+import { toast } from "sonner";
 import {
   Mail,
   Linkedin,
@@ -36,18 +37,30 @@ export function Contact() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
-      alert(
-        "Thanks for reaching out! This is a demo, so the message wasn't actually sent.",
-      );
-      setIsSubmitting(false);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      const data = await res.json().catch(() => ({}));
+
+      if (!res.ok) {
+        toast.error(data.error || "Failed to send message. Please try again.");
+        return;
+      }
+
+      toast.success("Message sent! I'll get back to you soon.");
       setFormData({ name: "", email: "", message: "" });
-    }, 1000);
+    } catch {
+      toast.error("Something went wrong. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const socialLinks = [
