@@ -37,7 +37,7 @@ const projects = [
     image: applyGoalAdminImageSrc,
     tags: ['Web', 'Dashboard', 'Admin Panel', 'SaaS'],
     color: 'from-blue-500 to-cyan-500',
-    link: '',
+    link: 'https://applygoal.com',
     linkLabel: 'View Project',
   },
   {
@@ -177,14 +177,29 @@ export function Projects() {
                 {/* Gradient Overlay */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-0 group-hover:opacity-20 transition-opacity duration-300`} />
                 
-                {/* Hover Icon */}
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={hoveredProject === project.id ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-                  className="absolute top-4 right-4 w-12 h-12 bg-white dark:bg-gray-900 rounded-full flex items-center justify-center shadow-lg"
-                >
-                  <ExternalLink className="w-6 h-6 text-gray-900 dark:text-white" />
-                </motion.div>
+                {/* Hover icon — opens project link in a new tab */}
+                {project.link ? (
+                  <motion.a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Open ${project.title} in a new tab`}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={hoveredProject === project.id ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+                    className="absolute top-4 right-4 z-10 w-12 h-12 bg-white dark:bg-gray-900 rounded-full flex items-center justify-center shadow-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <ExternalLink className="w-6 h-6 text-gray-900 dark:text-white" />
+                  </motion.a>
+                ) : (
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={hoveredProject === project.id ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+                    className="absolute top-4 right-4 w-12 h-12 bg-white dark:bg-gray-900 rounded-full flex items-center justify-center shadow-lg pointer-events-none"
+                  >
+                    <ExternalLink className="w-6 h-6 text-gray-900 dark:text-white" />
+                  </motion.div>
+                )}
               </div>
 
               {/* Content */}
