@@ -36,12 +36,12 @@ export function Hero() {
           </motion.div>
 
           <motion.div initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7, delay: 0.15 }} className="relative order-1 md:order-2">
-            <div className="relative w-full aspect-square max-w-xs sm:max-w-md md:max-w-lg mx-auto">
-              <div className="absolute inset-0 rounded-[2rem] sm:rounded-[3rem] bg-gradient-to-br from-purple-500/20 via-pink-500/20 to-blue-500/20 shadow-2xl" />
-              <div className="absolute inset-6 sm:inset-10 overflow-hidden rounded-2xl sm:rounded-3xl ring-4 ring-white/60 dark:ring-gray-700/60 shadow-2xl">
-                <ImageWithFallback src={profileImage} alt="Ahmed Shahriyar Parvez Pranto, UI/UX and Product Designer" className="w-full h-full object-cover object-top" />
+            <div className="relative mx-auto aspect-square w-[min(72vw,18rem)] sm:w-[min(42vw,24rem)] md:w-full md:max-w-lg">
+              <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-purple-500/20 via-pink-500/20 to-blue-500/20 shadow-2xl sm:rounded-[3rem]" />
+              <div className="absolute inset-4 overflow-hidden rounded-2xl shadow-2xl ring-4 ring-white/60 dark:ring-gray-700/60 sm:inset-6 sm:rounded-3xl lg:inset-10">
+                <ImageWithFallback src={profileImage} alt="Ahmed Shahriyar Parvez Pranto, UI/UX and Product Designer" className="h-full w-full object-cover object-top" />
               </div>
-              <div className="absolute -bottom-3 -right-2 sm:bottom-4 sm:-right-5 rounded-xl bg-white dark:bg-gray-800 px-4 py-3 shadow-lg">
+              <div className="absolute -bottom-4 right-0 rounded-xl bg-white px-3 py-2 shadow-lg dark:bg-gray-800 sm:bottom-4 sm:-right-4 sm:px-4 sm:py-3">
                 <p className="font-semibold text-gray-900 dark:text-white">4+ years</p>
                 <p className="text-xs text-gray-600 dark:text-gray-400">Product design experience</p>
               </div>
