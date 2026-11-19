@@ -1,10 +1,19 @@
 'use client';
 
-import { ArrowUpRight, ExternalLink } from 'lucide-react';
+import { Briefcase, Building2, ExternalLink, Globe, Monitor, Smartphone, Users } from 'lucide-react';
 import type { PortfolioProject } from '@/data/projects';
 
+const projectIcons = {
+  briefcase: Briefcase,
+  building: Building2,
+  globe: Globe,
+  monitor: Monitor,
+  smartphone: Smartphone,
+  users: Users,
+} as const;
+
 export function ProjectCard({ project }: { project: PortfolioProject }) {
-  const Icon = project.icon;
+  const Icon = projectIcons[project.icon];
 
   return (
     <article className="overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-lg dark:border-gray-700 dark:bg-gray-800">
