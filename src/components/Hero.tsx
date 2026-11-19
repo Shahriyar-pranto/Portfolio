@@ -3,7 +3,7 @@
 import { motion } from 'motion/react';
 import { ArrowRight, Sparkles } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
-import profileImageImport from '../assets/Profile Picture.png';
+import profileImageImport from '../assets/LinkedIn Profile Picture.png';
 
 const profileImage = typeof profileImageImport === 'string' ? profileImageImport : profileImageImport.src;
 
