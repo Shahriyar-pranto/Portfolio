@@ -1,8 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
-import { projects } from '@/data/projects';
-import { ProjectCard } from '@/components/ProjectCard';
+import { ProjectsGrid } from '@/components/ProjectsGrid';
 
 export const metadata: Metadata = {
   title: 'Projects | Ahmed Shahriyar Parvez Pranto',
@@ -23,9 +22,7 @@ export default function ProjectsPage() {
             Explore my work across company websites, web and mobile products, CRM, eCommerce, and recruitment platforms.
           </p>
         </header>
-        <div className="grid grid-cols-1 gap-5 sm:gap-7 lg:grid-cols-2">
-          {projects.map((project) => <ProjectCard key={project.title} project={project} />)}
-        </div>
+        <ProjectsGrid />
       </div>
     </main>
   );
