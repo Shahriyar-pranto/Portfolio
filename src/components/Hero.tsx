@@ -20,7 +20,7 @@ export function Hero() {
             <p className="mb-8 text-sm text-gray-500 dark:text-gray-400 sm:text-base">Dhaka, Bangladesh <span aria-hidden="true">·</span> Open to product design opportunities</p>
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
               <motion.button whileHover={{ y: -2 }} whileTap={{ scale: 0.98 }} onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })} className="inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-gray-950 px-6 py-3 font-medium text-white shadow-lg shadow-purple-900/10 transition-colors hover:bg-purple-700 dark:bg-white dark:text-gray-900 dark:hover:bg-purple-100">View Selected Work <ArrowRight aria-hidden="true" size={18} /></motion.button>
-              <a href="mailto:shahriyarpranto@gmail.com" className="glass-strong inline-flex min-h-12 items-center justify-center rounded-lg px-6 py-3 font-medium text-gray-800 transition-colors hover:text-purple-700 dark:text-white dark:hover:text-purple-300">Contact Me</a>
+              <a href="#contact" className="glass-strong inline-flex min-h-12 items-center justify-center rounded-lg px-6 py-3 font-medium text-gray-800 transition-colors hover:text-purple-700 dark:text-white dark:hover:text-purple-300">Contact Me</a>
             </div>
           </motion.div>
 
